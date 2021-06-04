@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html>
-    {{- partial "head.html" . -}}
-    <body>
-        {{- partial "header.html" . -}}
-        <div id="content">
-        {{- block "main" . }}{{- end }}
+<html lang="{{.Site.LanguageCode}}">
+{{- partial "head.html" . -}}
+
+<body class="with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true"
+    data-sidebar-shortcut-enabled="true" data-set-preferred-mode-onload="true">
+    <div class="page-wrapper with-navbar with-sidebar" data-sidebar-type="full-height">
+        {{ partial "navbar.html" . }}
+        <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+        
+                {{ partial "sidebar.html" . }}
+               
+        <div class="content-wrapper">
+            {{- block "main" . }}{{- end }}
         </div>
-        {{- partial "footer.html" . -}}
-    </body>
+    </div>
+    </div>
+    {{- partial "footer.html" . -}}
+</body>
+
 </html>

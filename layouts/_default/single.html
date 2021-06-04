@@ -1,0 +1,23 @@
+{{ define "main" }}
+ <div class="row">
+   <div class="col-lg-9">
+     <div class="content">
+       <h1 class="title"> <!-- font-size-22 = font-size: 2.2rem (22px) -->
+         {{ .Title }}
+       </h1>
+       {{ .Content }}
+     </div>
+   </div>
+   {{ if or (eq .Site.Params.enableToc true) (eq .Params.enableToc true) }}
+          <div class="col-lg-3 d-none d-lg-block"> <!-- d-none = display: none, d-lg-block = display: block only on large screens and up (> 992px) -->
+            <div class="content">
+                <h2 class="content-title font-size-16 mb-0">Table of Contents</h2> <!-- font-size-16 = font-size: 1.6rem (16px) -->
+                {{ .TableOfContents }}
+            </div>
+          </div>
+        </div>
+ {{ end }}
+
+</div> 
+{{ partial "footer.html" . }}
+{{ end }}
