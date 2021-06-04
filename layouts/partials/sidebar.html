@@ -1,0 +1,11 @@
+    <div class="sidebar">
+      <div class="sidebar-menu">
+       <!-- Sidebar brand -->
+        <a href="{{.Site.BaseURL}}" class="sidebar-brand">
+         {{ .Site.Params.title }}
+        </a>
+        <!-- Sidebar content with the search box -->
+        {{ partial "sidebar-content.html" . }}
+      </div>
+    </div>
+

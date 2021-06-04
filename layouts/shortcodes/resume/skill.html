@@ -1,0 +1,17 @@
+<div class="progress-group">
+{{ with .Get "skill" }}
+<span class="w-450 pb-5">{{.}}</span>
+{{ end }}
+{{ with .Get "level" }}
+<div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        style="width: {{.}}%;"
+                        aria-valuenow="{{.}}"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    </div>
+                    {{ end }}
+</div>

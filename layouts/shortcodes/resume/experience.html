@@ -1,0 +1,20 @@
+<div class="workExp">
+    <div id="expInfo" class="mb-10">
+      <span class="font-size-20">
+          {{ with .Get "title"}}
+          {{ . }}
+          {{ end }}
+          </span>
+        <span id="dates">
+          <i>
+            {{dateFormat "Jan 2006" (.Get "start")}} - {{if .Get "end"}}{{ dateFormat "Jan 2006" (.Get "end")}}{{else}}Present{{end}} 
+          </i>
+        </span>
+        <p class="mt-5">
+          {{ with .Get "comp"}}
+          {{ . }}
+          {{ end }}
+        </p>
+      </div>
+      {{ .Inner | markdownify}}
+</div>

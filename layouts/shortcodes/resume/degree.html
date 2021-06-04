@@ -1,0 +1,20 @@
+<div class="degree">
+    <div id="degInfo" class="mb-10">
+      <span class="font-size-20">
+          {{ with .Get "deg"}}
+          {{ . }}
+          {{ end }}
+          </span>
+        <span id="dates">
+          <i>
+            {{dateFormat "Jan 2006" (.Get "start")}} - {{if .Get "end"}}{{ dateFormat "Jan 2006" (.Get "end")}}{{else}}Present{{end}} 
+          </i>
+        </span>
+        <p class="mt-5">
+          {{ with .Get "uni"}}
+          {{ . }}
+          {{ end }}
+        </p>
+      </div>
+      {{ .Inner | markdownify}}
+</div>
